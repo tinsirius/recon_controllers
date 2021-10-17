@@ -103,7 +103,7 @@
 
   </group>
 
-  <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" required="false" />
+<!--   <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" required="false" />
   <node  pkg="rviz" type="rviz" output="screen" name="rviz" args="-d $(find franka_gazebo)/config/franka_sim_description_with_marker.rviz" if="$(arg rviz)"/>
 
   <group ns="conveyor">
@@ -119,6 +119,6 @@
           output="screen" />
 	</group>
 
-	<node name="cube_spawner" pkg="recon_controllers" type="demo.py" output="screen"/>
+	<node name="cube_spawner" pkg="recon_controllers" type="demo.py" output="screen"/> -->
 
 </launch>
