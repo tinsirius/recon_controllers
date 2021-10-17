@@ -1,0 +1,6 @@
+float64[7] joints
+float64 duration
+---
+bool success
+string error
+---

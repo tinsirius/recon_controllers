@@ -1,0 +1,12 @@
+<library path="lib/librecon_controllers">
+  <class name="recon_controllers/ForceServoController" type="recon_controllers::ForceServoController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      A controller that executes motion with force input for a Servoing Formulation
+    </description>
+  </class>
+  <class name="recon_controllers/JointPositionController" type="recon_controllers::JointPositionController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      A controller that get to a targeted joint position
+    </description>
+  </class>
+</library>
