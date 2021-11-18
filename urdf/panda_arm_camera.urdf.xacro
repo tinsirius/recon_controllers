@@ -59,9 +59,9 @@
      />
     
     <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
-    <sensor_d435 parent="panda_hand" publish_pointcloud="false">
+    <xacro:sensor_d435 parent="panda_hand" publish_pointcloud="false">
       <origin xyz="0.020 0 0.04" rpy="3.1415 -1.571 0"/>
-    </sensor_d435>
+    </xacro:sensor_d435>
 
     <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
