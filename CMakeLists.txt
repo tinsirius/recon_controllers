@@ -113,10 +113,6 @@ install(DIRECTORY config
 install(FILES recon_controllers_plugin.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-catkin_install_python(
-  PROGRAMS scripts/interactive_marker.py scripts/move_to_start.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
 
 ## Tools
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/ClangTools.cmake OPTIONAL
