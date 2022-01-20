@@ -29,9 +29,6 @@ class JointPositionController : public controller_interface::MultiInterfaceContr
                                                 hardware_interface::EffortJointInterface,
                                                 franka_hw::FrankaStateInterface> {
  public:
-    JointPositionController(): set_target_joint_action_server_ (nh_, "set_target_joint", boost::bind(&JointPositionController::executeCB, this, _1), false) {
-        set_target_joint_action_server_.start();
-    };
     bool init(hardware_interface::RobotHW* robot_hw, ros::NodeHandle& node_handle) override;
     void starting(const ros::Time&) override;
     void update(const ros::Time&, const ros::Duration& period) override;
@@ -65,7 +62,7 @@ class JointPositionController : public controller_interface::MultiInterfaceContr
                                 });
       
         result.success = success;
-        set_target_joint_action_server_.setSucceeded(result);
+        set_target_joint_action_server_->setSucceeded(result);
         q_d_ = Eigen::Map<const Eigen::Matrix<double, 7, 1>>(target_joints.data());
         return;
   };
@@ -88,7 +85,8 @@ class JointPositionController : public controller_interface::MultiInterfaceContr
     ros::Subscriber sub_joint_;
     void jointCallback(const recon_controllers::jointConstPtr& msg);
     bool motion_finished_ {true};
-    actionlib::SimpleActionServer<set_target_jointAction> set_target_joint_action_server_;
+    // actionlib::SimpleActionServer<set_target_jointAction> set_target_joint_action_server_;
+    std::unique_ptr<actionlib::SimpleActionServer<set_target_jointAction>> set_target_joint_action_server_;
     Eigen::Matrix<double, 7, 1> initial_joints_ {};
     ros::NodeHandle nh_;
     std::array<double, 7> DELTA_Q_;

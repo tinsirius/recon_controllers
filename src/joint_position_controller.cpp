@@ -77,11 +77,18 @@ bool JointPositionController::init(hardware_interface::RobotHW* robot_hw,
     }
   }
 
+  set_target_joint_action_server_ = std::make_unique<actionlib::SimpleActionServer<set_target_jointAction>>(
+    node_handle, 
+    "set_target_joint", 
+    boost::bind(&JointPositionController::executeCB, this, _1), 
+    false);
+
+  set_target_joint_action_server_->start();
+
   return true;
 }
 
 void JointPositionController::starting(const ros::Time& /*time*/) {
-
   franka::RobotState initial_state = state_handle_->getRobotState();
   Eigen::Map<Eigen::Matrix<double, 7, 1>> q_initial(initial_state.q.data());
   q_d_ = q_initial;
