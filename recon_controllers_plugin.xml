@@ -9,4 +9,9 @@
       A controller that get to a targeted joint position
     </description>
   </class>
+  <class name="recon_controllers/JointTorqueController" type="recon_controllers::JointTorqueController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      A Joint Torque Controller
+    </description>
+  </class>
 </library>

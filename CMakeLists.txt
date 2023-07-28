@@ -71,6 +71,7 @@ catkin_package(
 add_library(recon_controllers
   src/force_servo_controller.cpp
   src/joint_position_controller.cpp
+  src/joint_torque_controller.cpp
 )
 
 add_dependencies(recon_controllers
