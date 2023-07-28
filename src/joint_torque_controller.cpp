@@ -107,8 +107,8 @@ Eigen::Matrix<double, 7, 1> JointTorqueController::saturateTorqueRate(
 }
 
 void JointTorqueController::jointTorqueCallback(
-  const recon_controllers::jointConstPtr& msg) {
-    tau_d_ << msg->joints[0], msg->joints[1], msg->joints[2], msg->joints[3], msg->joints[4], msg->joints[5], msg->joints[6];
+  const ros_package::yeetConstPtr& msg) {
+    tau_d_ << msg->torques[0], msg->torques[1], msg->torques[2], msg->torques[3], msg->torques[4], msg->torques[5], msg->torques[6];
   }
 }  // namespace recon_controllers
 

@@ -22,6 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   actionlib
   actionlib_msgs
+  ros_package
 )
 
 find_package(Eigen3 REQUIRED)
@@ -65,6 +66,7 @@ catkin_package(
     roscpp
     actionlib
     actionlib_msgs
+    ros_package
   DEPENDS Franka
 )
 

@@ -29,6 +29,7 @@
   <depend>roscpp</depend>
   <depend>actionlib</depend>
   <depend>actionlib_msgs</depend>
+  <depend>ros_package</depend>
 
   <exec_depend>franka_control</exec_depend>
   <exec_depend>franka_description</exec_depend>

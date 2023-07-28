@@ -9,7 +9,7 @@
 #include <cmath>
 
 #include <controller_interface/multi_interface_controller.h>
-#include <recon_controllers/joint.h>
+#include <ros_package/yeet.h>
 #include <hardware_interface/joint_command_interface.h>
 #include <hardware_interface/robot_hw.h>
 #include <ros/time.h>
@@ -43,7 +43,7 @@ class JointTorqueController : public controller_interface::MultiInterfaceControl
     Eigen::Matrix<double, 7, 1> tau_d_;
                                 
     ros::Subscriber sub_joint_;
-    void jointTorqueCallback(const recon_controllers::jointConstPtr& msg);
+    void jointTorqueCallback(const ros_package::yeetConstPtr& msg);
     double duration_ {};
 };
 

@@ -17,7 +17,6 @@
   
   <include file="$(find panda_moveit_config)/launch/move_group.launch">
     <arg name="load_gripper" value="$(arg load_gripper)" />
-    <arg name="transmission" value ="position"/>
   </include>
 
   <group if="$(arg visualization)">
